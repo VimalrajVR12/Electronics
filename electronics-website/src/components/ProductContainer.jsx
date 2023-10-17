@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from "../styles/ProductContainer.module.css"
-const ProductContainer = () => {
+const ProductContainer = ({ img, title }) => {
   return (
     <div className={styles.container}>
-      <img src="/tvs/blaupunkt.png" alt="product" />
+      <img src={img} alt="product" />
       <div className={styles.title}>
-        <p>LG (32 inch) (2023)</p>
+        <p>{title}</p>
       </div>
     </div>
   );
-}
+};
 
 export default ProductContainer
