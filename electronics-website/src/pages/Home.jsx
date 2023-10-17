@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <img className={styles.banner} src="/banner.webp" alt="banner" />
-      <ProductContainer/>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from "react-router-dom";
 import styles from "../styles/Navbar.module.css"
 import {
-  searchSVG,
   homeSVG,
   wishlistSVG,
   cartSVG,
@@ -17,14 +16,11 @@ const Navbar = () => {
       <NavLink title="Home" to="/">
         {homeSVG}
       </NavLink>
-      <div className={styles.searchContainer}>
-        <input
-          type="text"
-          className={styles.searchInput}
-          placeholder="Search Products"
-        />
-        {searchSVG}
-      </div>
+      <input
+        type="text"
+        className={styles.searchInput}
+        placeholder="Search Products"
+      />
       <div className={styles.optionsPC}>
         <NavLink title="Products" to="/products">
           {productSVG}
@@ -32,8 +28,12 @@ const Navbar = () => {
         <NavLink title="Wishlist" to="/wishlist">
           {wishlistSVG}
         </NavLink>
-        <NavLink title='Cart' to="/cart">{cartSVG}</NavLink>
-        <NavLink title={isAuth?"Log Out":"Log In"} to="/login">{isAuth ? loggedinSVG : loginSVG}</NavLink>
+        <NavLink title="Cart" to="/cart">
+          {cartSVG}
+        </NavLink>
+        <NavLink title={isAuth ? "Log Out" : "Log In"} to="/login">
+          {isAuth ? loggedinSVG : loginSVG}
+        </NavLink>
       </div>
     </div>
   );
