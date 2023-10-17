@@ -33,7 +33,7 @@ const Navbar = () => {
           {wishlistSVG}
         </NavLink>
         <NavLink title='Cart' to="/cart">{cartSVG}</NavLink>
-        <NavLink title={isAuth?"Log In":"Log Out"} to="/login">{isAuth ? loggedinSVG : loginSVG}</NavLink>
+        <NavLink title={isAuth?"Log Out":"Log In"} to="/login">{isAuth ? loggedinSVG : loginSVG}</NavLink>
       </div>
     </div>
   );
