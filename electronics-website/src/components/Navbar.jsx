@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from "react-router-dom";
 import styles from "../styles/Navbar.module.css"
 import {
+  searchSVG,
   homeSVG,
   wishlistSVG,
   cartSVG,
@@ -13,19 +14,26 @@ const Navbar = () => {
   const isAuth = false;
   return (
     <div className={styles.containerPC}>
-      <NavLink to="/">{homeSVG}</NavLink>
-      <div>
+      <NavLink title="Home" to="/">
+        {homeSVG}
+      </NavLink>
+      <div className={styles.searchContainer}>
         <input
           type="text"
           className={styles.searchInput}
           placeholder="Search Products"
         />
+        {searchSVG}
       </div>
       <div className={styles.optionsPC}>
-        <NavLink to="/products">{productSVG}</NavLink>
-        <NavLink to="/wishlist">{wishlistSVG}</NavLink>
-        <NavLink to="/cart">{cartSVG}</NavLink>
-        <NavLink to="/login">{isAuth ? loggedinSVG : loginSVG}</NavLink>
+        <NavLink title="Products" to="/products">
+          {productSVG}
+        </NavLink>
+        <NavLink title="Wishlist" to="/wishlist">
+          {wishlistSVG}
+        </NavLink>
+        <NavLink title='Cart' to="/cart">{cartSVG}</NavLink>
+        <NavLink title={isAuth?"Log In":"Log Out"} to="/login">{isAuth ? loggedinSVG : loginSVG}</NavLink>
       </div>
     </div>
   );

@@ -24,3 +24,6 @@ svg:hover{
 fill: royalblue;
 height: 2em;
 }
+a.active svg {
+  fill: lightgray;
+}
