@@ -1,0 +1,90 @@
+{
+  "users": [],
+  "products": [],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Apple 20W ,USB-C Power Charging Adapter for iPhone, iPad & AirPods  (White)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/battery-charger/u/b/p/-original-imagqjh6gg35h7hz.jpeg?q=70",
+      "price": 1699,
+      "MRP": 1900,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "APPLE iPhone 14 (Blue, 128 GB)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
+      "price": 61999,
+      "MRP": 69900,
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/kpinwy80/headphone/x/r/e/mmef2hn-a-apple-original-imag3qe9hphsevrt.jpeg?q=70",
+      "price": 10990,
+      "MRP": 12900,
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "OnePlus Bullets Wireless Z2 Bluetooth Headset  (Acoustic Red, In the Ear)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/l4ei1e80/headphone/b/j/w/bullets-wireless-z2-oneplus-original-imagfaww7ga6nshz.jpeg?q=70",
+      "price": 1499,
+      "MRP": 2299,
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "title": "Apple 20W ,USB-C Power Charging Adapter for iPhone, iPad & AirPods  (White)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/battery-charger/u/b/p/-original-imagqjh6gg35h7hz.jpeg?q=70",
+      "price": 1699,
+      "MRP": 1900,
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "title": "APPLE iPhone 14 (Blue, 128 GB)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
+      "price": 61999,
+      "MRP": 69900,
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "title": "Apple AirPods(2nd gen) with Charging Case Bluetooth Headset with Mic  (White, True Wireless)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/kpinwy80/headphone/x/r/e/mmef2hn-a-apple-original-imag3qe9hphsevrt.jpeg?q=70",
+      "price": 10990,
+      "MRP": 12900,
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "title": "OnePlus Bullets Wireless Z2 Bluetooth Headset  (Acoustic Red, In the Ear)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/l4ei1e80/headphone/b/j/w/bullets-wireless-z2-oneplus-original-imagfaww7ga6nshz.jpeg?q=70",
+      "price": 1499,
+      "MRP": 2299,
+      "quantity": 1
+    }
+  ],
+  "wishlist": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Apple 20W ,USB-C Power Charging Adapter for iPhone, iPad & AirPods  (White)",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/battery-charger/u/b/p/-original-imagqjh6gg35h7hz.jpeg?q=70",
+      "price": 1699,
+      "MRP": 1900,
+      "quantity": 1
+    }
+  ],
+  "orders": []
+}
