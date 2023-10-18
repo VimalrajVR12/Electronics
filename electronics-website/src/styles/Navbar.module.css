@@ -1,0 +1,32 @@
+.containerPC{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    margin: 5px auto 10px auto;
+    border: 1px solid lightgray;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background: #f4f5f8;
+    -webkit-box-shadow: 12px 12px 24px #cfd0d3, -12px -12px 24px #ffffff;
+    box-shadow: 12px 12px 24px #cfd0d3, -12px -12px 24px #ffffff;
+}
+.optionsPC{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 17.5%;
+}
+.searchInput{
+    width: 20%;
+    border: 1px solid darkgray;
+    height: 2.5em;
+    padding: 5px 35px;
+    border-radius: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    outline: none;
+    background-color: inherit;
+}
