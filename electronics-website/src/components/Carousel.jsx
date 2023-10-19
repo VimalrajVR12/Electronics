@@ -6,7 +6,7 @@ const Carousel = ({data}) => {
   return (
     <div className={styles.container}>
       {data.map((el,i) => (
-        <ProductContainer key={i} img={el.img} title={el.title} />
+        <ProductContainer key={i} img={el.img} title={el.title} price={el.price} discountPrice={el.discountPrice} />
       ))}
     </div>
   );

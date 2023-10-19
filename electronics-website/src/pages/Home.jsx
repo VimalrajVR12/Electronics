@@ -4,18 +4,78 @@ import Carousel from '../components/Carousel';
 import Separator from "../components/Separator"
 import Heading from '../components/Heading';
 const tvs = [
-  { title: "Blaupunkt CyberSound", img: "/tvs/blaupunkt.png" },
-  { title: "Kodak 4K", img: "/tvs/kodak.png" },
-  { title: "Moto Envision", img: "/tvs/moto.png" },
-  { title: "Samsung TV", img: "/tvs/samsung.png" },
-  { title: "Moto Envision", img: "/tvs/moto.png" },
-  { title: "Thompson TV", img: "/tvs/thompson.png" },
-  { title: "Blaupunkt CyberSound", img: "/tvs/blaupunkt.png" },
-  { title: "Kodak 4K", img: "/tvs/kodak.png" },
-  { title: "Moto Envision", img: "/tvs/moto.png" },
-  { title: "Samsung TV", img: "/tvs/samsung.png" },
-  { title: "Moto Envision", img: "/tvs/moto.png" },
-  { title: "Thompson TV", img: "/tvs/thompson.png" },
+  {
+    title: "Blaupunkt CyberSound",
+    img: "/tvs/blaupunkt.png",
+    price: "24,999",
+    discountPrice: "19,999",
+  },
+  {
+    title: "Kodak 4K",
+    img: "/tvs/kodak.png",
+    price: "19,999",
+    discountPrice: "14,999",
+  },
+  {
+    title: "Moto Envision",
+    img: "/tvs/moto.png",
+    price: "29,999",
+    discountPrice: "19,999",
+  },
+  {
+    title: "Samsung TV",
+    img: "/tvs/samsung.png",
+    price: "49,999",
+    discountPrice: "39,999",
+  },
+  {
+    title: "Moto Envision",
+    img: "/tvs/moto.png",
+    price: "39,999",
+    discountPrice: "34,999",
+  },
+  {
+    title: "Thompson TV",
+    img: "/tvs/thompson.png",
+    price: "19,999",
+    discountPrice: "14,999",
+  },
+  {
+    title: "Blaupunkt CyberSound",
+    img: "/tvs/blaupunkt.png",
+    price: "24,999",
+    discountPrice: "19,999",
+  },
+  {
+    title: "Kodak 4K",
+    img: "/tvs/kodak.png",
+    price: "19,999",
+    discountPrice: "14,999",
+  },
+  {
+    title: "Moto Envision",
+    img: "/tvs/moto.png",
+    price: "29,999",
+    discountPrice: "19,999",
+  },
+  {
+    title: "Samsung TV",
+    img: "/tvs/samsung.png",
+    price: "49,999",
+    discountPrice: "39,999",
+  },
+  {
+    title: "Moto Envision",
+    img: "/tvs/moto.png",
+    price: "39,999",
+    discountPrice: "34,999",
+  },
+  {
+    title: "Thompson TV",
+    img: "/tvs/thompson.png",
+    price: "19,999",
+    discountPrice: "14,999",
+  },
 ];
 const Home = () => {
   return (
