@@ -34,7 +34,30 @@ height: 2em;
 a.active svg {
   fill: lightgray;
 }
-img{
-  max-width: 97.5vw;
-  margin-bottom: 25px;
+
+/* src/App.css */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  text-align: center;
+}
+
+.prev-button,
+.next-button {
+  margin-top: 20px;
 }
