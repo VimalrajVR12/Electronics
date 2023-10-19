@@ -1,9 +1,6 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    width: 97.5%;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(1,1fr);
+    margin: 0 auto;
     scroll-behavior: smooth;
 }
