@@ -1,8 +1,6 @@
 .container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    overflow: hidden;
-    gap: 20px;
     width: 97.5%;
     margin: auto;
     align-items: center;
