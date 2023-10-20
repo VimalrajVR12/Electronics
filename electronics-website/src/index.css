@@ -5,8 +5,7 @@
   --font-family: 'Manrope', sans-serif;
 }
 *{
-  transition: color .3s ease-in-out;
-  transition: box-shadow .3s ease-in-out;
+  transition: all .3s ease-in-out;
   box-sizing: border-box;
 }
 *::after,*::before{box-sizing: border-box;}
@@ -48,3 +47,4 @@ a.active svg {
   top: 20px;
   height: 66px;
 }
+

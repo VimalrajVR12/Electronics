@@ -61,13 +61,11 @@ aside a:hover{
 }
 @media screen and (min-width: 425px) and (max-width: 767px) {
     .searchInput {
-        width: 200px;
-        height: 40px;
+        width: 175px;
         font-size: 12px;
-        padding: 15px;
+        padding: 5px 25px;
     }
     .container {
         padding: 15px 25px;
     }
-    
 }

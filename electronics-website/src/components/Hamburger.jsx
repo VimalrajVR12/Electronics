@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { crossSVG, hamburgerSVG } from './SVGs';
 import { NavLink } from 'react-router-dom';
 const Hamburger = () => {
-  const closed = { state: "close", style: {translate:"10000px"} };
+  const closed = { state: "close", style: {translate:"5000px"} };
   const [currState,setCurrState] = useState(closed)
   const opened = {
     state: "open",
     style: {
       top: "0",
       left: "0",
-      backgroundColor: "rgba(0, 0, 0, .5)",
+      backgroundColor: "rgba(0, 0, 0, .3)",
       height: "100vh",
       width: "100vw",
       zIndex: "1",
