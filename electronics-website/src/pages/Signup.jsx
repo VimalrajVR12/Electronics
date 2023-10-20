@@ -1,10 +1,33 @@
 import React from 'react'
+// import React, { useState } from 'react';
+import { useState } from 'react';
 import "../styles/Signup.css"
 
 const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignup = () => {
+    // Handle signup logic here
+  };
   return (
     <div>
-      <h1>Signup page</h1>
+      <h2>Signup</h2>
+      <form>
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleSignup}>Signup</button>
+      </form>
     </div>
   )
 }
