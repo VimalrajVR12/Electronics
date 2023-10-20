@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./cartPage.module.css";
 import CartProduct from "../components/CartProduct";
 import "../styles/CartPage.css";
 
@@ -19,19 +18,14 @@ const coupon = [
   },
 ];
 
-const parentStyle = {
-  display: "flex",
-  flexDirection: "row",
-  columnGap: "20px",
-  border: "5px solid red",
-  margin: "50px",
-};
+// const parentStyle = {
+//   display: "flex",
+//   flexDirection: "row",
+//   columnGap: "20px",
+//   // border: "5px solid red",
+//   margin: "50px",
+// };
 
-const priceDetailsStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  margin: "10px",
-};
 const baseURL = `http://localhost:8080/cart`;
 const CartPage = () => {
   const [userId, setUserId] = useState(1);
@@ -123,7 +117,7 @@ const CartPage = () => {
     fetchCart();
   }, []);
   return (
-    <div style={parentStyle}>
+    <div className="container">
       <div>
         <div>
           <h1>Your Cart</h1>
@@ -140,38 +134,46 @@ const CartPage = () => {
           ))}
         </div>
       </div>
-      <div style={{ width: "30%" }}>
-        <div>
-          <h1>Price Details</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Enter Coupon"
-              onChange={(e) => {
-                setCode(e.target.value);
-              }}
-              value={code}
-            />
-            <input type="submit" />
-          </form>
-          <p>{msg}</p>
+      <div className="priceContainer">
+        <div className="price">
+          <div className="PriceDetails">
+            <h1>Price Details</h1>
+          </div>
+          <div>
+            <div className="form">
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Enter Coupon"
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                  }}
+                  value={code}
+                />
+                <input type="submit" />
+              </form>
+            </div>
+            <p>{msg}</p>
+          </div>
         </div>
 
         <div>
-          <div style={priceDetailsStyle}>
+          <div className="priceDetails">
             <h3>Price ({cartData.length} items)</h3>
             <h3>₹{totalMRP}</h3>
           </div>
-          <div style={priceDetailsStyle}>
+          <div className="priceDetails">
             <h3>Discount</h3>
             <h3>₹{totalMRP - totalPrice - discount}</h3>
           </div>
-          <div style={priceDetailsStyle}>
+          <div className="priceDetails">
             <h3>Total Amount</h3>
             <h3>₹{totalPrice}</h3>
           </div>
         </div>
-        <button>Proceed to Payment</button>
+        <div>
+          <button className="PaymentBtn">Proceed to Payment</button>
+        </div>
       </div>
     </div>
   );
