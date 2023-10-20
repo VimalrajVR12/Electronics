@@ -6,10 +6,14 @@
 }
 *{
   transition: all .3s ease-in-out;
+  box-sizing: border-box;
 }
+*::after,*::before{box-sizing: border-box;}
 body {
-  width: 97.5%;
-  margin: auto;
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 97.5%;
+  text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -28,6 +32,7 @@ svg {
   padding: 0.1em;
 }
 svg:hover{
+  cursor: pointer;
 fill: royalblue;
 height: 2em;
 }
@@ -35,29 +40,11 @@ a.active svg {
   fill: lightgray;
 }
 
-/* src/App.css */
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+#crossSVGContainer svg {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 66px;
 }
 
-.carousel {
-  display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-.carousel-item {
-  flex: 0 0 100%;
-  min-width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin: 10px;
-  text-align: center;
-}
-
-.prev-button,
-.next-button {
-  margin-top: 20px;
-}

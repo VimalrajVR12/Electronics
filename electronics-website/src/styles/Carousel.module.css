@@ -1,11 +1,28 @@
 .container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    overflow: hidden;
-    gap: 20px;
-    width: 97.5%;
-    margin: auto;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+.container svg{
+    height: 50px;
+}
+.carousel{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 15px;
+    margin: auto;
+    transition: all .3s ease-in;
+    overflow: auto;
+    padding: 5px 0px;
     scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar{
+display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
 }

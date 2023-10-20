@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState,useRef,useEffect} from 'react'
 import styles from "../styles/Home.module.css"
 import Carousel from '../components/Carousel';
 import Separator from "../components/Separator"
@@ -78,12 +78,28 @@ const tvs = [
   },
 ];
 const Home = () => {
+  const [width, setWidth] = useState();
+  const elRef = useRef();
+  const interval = useRef(null);
+  useEffect(() => {
+    const update = () => {
+      setWidth((prev) => {
+        console.log(prev);
+        return elRef.current.offsetWidth;
+      });
+    };
+    if (!interval.current) interval.current = setInterval(update, 1000);
+    return () => {
+      clearInterval(interval.current);
+      console.log("cleared");
+    };
+  }, []);
   return (
-    <div className={styles.container}>
+    <div ref={elRef} className={styles.container}>
       <img className={styles.img} src="/banner.webp" alt="banner" />
       <Separator />
       <Heading body={"TVs"} />
-      <Carousel data={tvs} />
+      <Carousel data={tvs} width={width}/>
       <Separator />
     </div>
   );
