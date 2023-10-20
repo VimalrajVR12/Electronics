@@ -1,12 +1,453 @@
 import React from 'react'
 import "../styles/Products.css"
-
+import ProductContainer from '../components/ProductContainer';
+import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 const Products = () => {
-  return (
+  let products = [
+    {
+      "id": 1,
+    "name":"SAMSUNG Galaxy A03 Core (SM-A032/DS) Dual SIM 32GB/ 2GB RAM, GSM Unlocked International Version - No Warranty - Black\n3.8 out of 5 stars\n1,783\nINR 7,075.84\nINR7,075\n.\n84\nShips to India\nMore Buying Choices\nINR 6,534.68(18 used & new offers)",
+    "image":"https://m.media-amazon.com/images/I/61EYfTYzWML._AC_UY218_.jpg",
+    "price": 7075,
+    "MRP": 37463.92,
+    "category": "phones",
+    "rating": 3.8,
+    "quantity": 25
+    },
+      
+        {
+          "id": 2,
+        "name":"2 Pack iPhone Headphones Wired Earbuds with Lightning Connector【MFi Certified】in-Ear Stereo Noise Canceling Isolating Headphones for iPhone 14/13/12/11/SE/X/XR/XS/8 (Built-in Mic & Volume Control)\n4.3 out of 5 stars\n1,757\nINR 1,164.74\nINR1,164\n.\n74\nSave 15% with coupon\nShips to India\nOnly 9 left in stock - order soon.",
+        "image":"https://m.media-amazon.com/images/I/51pm8Ny6mIL._AC_UY218_.jpg",
+        "price":1164,
+        "MRP": 1300,
+        "category": "headphones",
+        "rating":4.3,
+        "quantity": 25
+        },
+        {
+          "id": 3,
+        "name":"2 Pack iPhone Headphones Wired, iPhone Earbuds with Lightning Connector [MFi Certified](Built-in Microphone & Volume Control) Noise Canceling Isolating Headphones for iPhone 14/13/12/11/SE/XS/8/7\n3.9 out of 5 stars\n834\nINR 831.72\nINR831\n.\n72 (INR 416.28/count) List:\nINR 956.60\nINR956.60\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/41oCxvJdkYL._AC_UY218_.jpg",
+        "price":831,
+        "MRP": 1400,
+        "category": "headphones",
+        "rating":3.9,
+        "quantity": 57
+        },
+        {
+          "id": 4,
+        "name":"Earbuds for iPhone Headphones Wired, Earphones with Lightning Connector [MFi Certified] Built-in Microphone & Volume Control, Noise Isolating Headsets for iPhone 14/13/12/11/XR/XS/X/8/7/SE-White\n4.3 out of 5 stars\n8,291\nINR 831.72\nINR831\n.\n72 (INR 139.04/None)\nSave 5% with coupon\nShips to India\nMore Buying Choices\nINR 747.63(2 used & new offers)",
+        "image":"https://m.media-amazon.com/images/I/41fpTJbMV3L._AC_UY218_.jpg",
+        "price":831,
+        "MRP": 1100,
+        "category": "headphones",
+        "rating": 4.3,
+        "quantity": 121
+        },
+        {
+          "id": 5,
+        "name":"Peakfun Wireless Headphones Over-Ear Bluetooth Adjustable Headphones 42 Hours of Listening Time Volume Control, Fitting in Gaming/Running/Sports Headphones for iPhone/Android/Samsung - Silver\n4.4 out of 5 stars\n4,312\nINR 3,321.87\nINR3,321\n.\n87\nSave 10% with coupon\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/71HvuMtsiNL._AC_UY218_.jpg",
+        "price":3321,
+        "MRP": 5500,
+        "category": "headphones",
+        "rating": 4.4,
+        "quantity": 110
+        },
+        {
+          "id": 6,
+        "name":"Peakfun Pro Wireless Bluetooth Headphones Active Noise Cancelling Over-Ear Headphones with Microphones, 42 Hours Playtime, HiFi Audio Adjustable Headphones for iPhone/Android/Samsung - Silver\n4.1 out of 5 stars\n3,235\nINR 3,155.36\nINR3,155\n.\n36 List:\nINR 4,154.42\nINR4,154.42\nSave 10% with coupon\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/71HvuMtsiNL._AC_UY218_.jpg",
+        "price":3155,
+        "MRP": 5500,
+        "category": "headphones",
+        "rating":4.1,
+        "quantity": 47
+        },
+        {
+          "id": 7,
+        "name":"WASABI MANGO Earbuds for iPhone,Wired Headphones Earphones with Lightning Connector【MFi Certified】 Noise Isolating Headsets for iPhone 14/13/12/11/XR/XS/X/8(Built-in Microphone & Volume Control)\n4.4 out of 5 stars\n1,659\nINR 831.72\nINR831\n.\n72\nSave 5% with coupon\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/51sQLJYpOlL._AC_UY218_.jpg",
+        "price": 831,
+        "MRP": 1200,
+        "category": "headphones",
+        "rating": 4.4,
+        "quantity": 49
+        },
+        {
+          "id": 8,
+        "name":"Peakfun Wireless Headphones Over-Ear Bluetooth Adjustable Headphones 42 Hours of Listening Time Volume Control, Fitting in Gaming/Running/Sports Headphones for iPhone/Android/Samsung - Space Gary\n4.2 out of 5 stars\n2,822\nINR 3,321.87\nINR3,321\n.\n87 (INR 79.09/None) List:\nINR 4,579.02\nINR4,579.02\nSave 20% with coupon\nShips to India\nOnly 5 left in stock - order soon.",
+        "image":"https://m.media-amazon.com/images/I/71WKAMxGxRL._AC_UY218_.jpg",
+        "price":3321,
+        "MRP": 4500,
+        "category": "headphones",
+        "rating": 4.2,
+        "quantity": 55
+        },
+        {
+          "id": 9,
+        "name":"Wired Earbuds for iPhone, Apple Headphones with Lightning Connector [MFi Certified] No Bluetooth Earphones with Microphone & Remote Compatible with iPhone 14/13/12/11/XR/XS/X/8/8Plus/7/SE (White)\n4.8 out of 5 stars\n165\nINR 1,081.48\nINR1,081\n.\n48 List:\nINR 1,664.27\nINR1,664.27\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/516xM4MPXhL._AC_UY218_.jpg",
+        "price": 1081,
+        "MRP": 1499,
+        "category": "headphones",
+        "rating": 4.8,
+        "quantity": 15
+        },
+        {
+          "id": 10,
+        "name":"Apple Earbuds, 2 Pack iPhone Wired with Lightning Connector [Apple MFi Certified] Wired Earphones with Microphone Volume Control Music and Calling Headphones for iPhone 14/13/12/11/SE/X/XR/XS/8/7\n3.5 out of 5 stars\n519\nINR 790.09\nINR790\n.\n09 (INR 395.46/Count) Typical:\nINR 831.72\nINR831.72\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/51SYQ4J-+1L._AC_UY218_.jpg",
+        "price": 790,
+        "MRP": 999,
+        "category": "headphones",
+        "rating": 3.5,
+        "quantity": 19
+        },
+        {
+          "id": 11,
+        "name":"[Apple MFi Certified] Wireless Earbuds for AirPods Pro Wireless Headset with Touch Control, Noise Cancelling, IPX7 Waterproof Built-in Microphone with Charging case White\n4.5 out of 5 stars\n5,254\nINR 1,914.03\nINR1,914\n.\n03\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/51NYfKb0ipL._AC_UY218_.jpg",
+        "price": 1914,
+        "MRP": 3500,
+        "category": "headphones",
+        "rating": 4.5,
+        "quantity": 15
+        },
+        {
+          "id": 12,
+        "name":"Srhythm NiceComfort 95 Hybrid Noise Cancelling Headphones,Wireless Bluetooth Headset with Transparency Mode,HD Sound\n4.2 out of 5 stars\n558\nINR 6,076.78\nINR6,076\n.\n78\nSave 15% with coupon\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/61lWQaLPqfL._AC_UY218_.jpg",
+        "price": 6076,
+        "MRP": 10999,
+        "category": "headphones",
+        "rating": 4.2,
+        "quantity": 121
+        },
+        {
+          "id": 13,
+        "name":"2 Packs iPhone Earbuds with 3.5mm Plug [iPhone MFi Certified] iPhone Wired Headphones (Built-in Microphone & Volume Control) Compatiable with iPad/iPod/Computer/Laptop/PS5/Most Gaming Audio Devices\n4.6 out of 5 stars\n1,609\nINR 831.72\nINR831\n.\n72\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/51R5ll3m5dL._AC_UY218_.jpg",
+        "price": 831,
+        "MRP": 1299,
+        "category": "headphones",
+        "rating": 4.6,
+        "quantity": 21
+        },
+        {
+          "id": 14,
+        "name":"2 Pack Wired Apple Earbuds 3.5mm Wired Earbuds Headphones [Apple MFi Certified](Built-in Volume Control & Microphone) Compatible iPhone,iPad,iPod,Computer,MP3/4,Android Most 3.5mm Audio Devices\n4.6 out of 5 stars\n1,554\nINR 1,164.74\nINR1,164\n.\n74 List:\nINR 1,664.27\nINR1,664.27\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/61FV1mEaR8L._AC_UY218_.jpg",
+        "price": 1164,
+        "MRP": 1800,
+        "category": "headphones",
+        "rating": 4.6,
+        "quantity": 32
+        },
+        {
+          "id": 15,
+        "name":"2 Pack-Apple Earbuds/Lightning/iPhone Headphones Wired Earphones [Apple MFi Certified] Built-in Microphone & Volume Control Compatible with iPhone 7/8/X/11/12/13/14/Pro/Pro Max, Support All iOS System\n2.2 out of 5 stars\n83\nINR 1,163.90\nINR1,163\n.\n90 (INR 581.95/Count) List:\nINR 1,829.11\nINR1,829.11\nShips to India",
+        "image":"https://m.media-amazon.com/images/I/41h0i8a2fTL._AC_UY218_.jpg",
+        "price":1163,
+        "MRP": 2100,
+        "category": "headphones",
+        "rating": 2.2,
+        "quantity": 27
+        },
+        {
+          "id": 16,
+          "name":"Sponsored\nHP Newest Flagship 15.6 HD Pavilion Laptop for Business and Student, 16GB RAM, 1TB SSD, Intel Quad-Core Pentium N5030, Webcam, Online Conferencing, Fast Charge, WiFi, Win 11, w/GM Accessory, Black\n4.4 out of 5 stars\n68\nINR 39,046.60\nINR39,046\n.\n60\nShips to India\nOptions:\n8 capacities\n8 capacities",
+          "image":"https://m.media-amazon.com/images/I/81Jo0-4zMHL._AC_UY218_.jpg",
+          "rating": 4.4,
+          "price": 39046,
+          "MRP": 45799,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 17,
+          "name":"Sponsored\nLENOVO IdeaPad 3 Laptop, 15.6\" FHD Screen, AMD Ryzen 7 5700U (Beat i7-1160G7), 36GB RAM, 1TB SSD, Webcam, HDMI, Wi-Fi, Windows 11 Pro, Grey\n4.3 out of 5 stars\n9\nINR 58,277.67\nINR58,277\n.\n67\nShips to India\nOptions:\n6 capacities\n6 capacities",
+          "image":"https://m.media-amazon.com/images/I/71+JttaWXIL._AC_UY218_.jpg",
+          "rating": 4.3,
+          "price": 58277,
+          "MRP": 74499,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 18,
+          "name":"Sponsored\nASUS Chromebook Plus CX34 Laptop, 14\" Display (1920x1080), Intel® Core™ i3-1215U Processor, 8GB RAM, 256GB UFS Storage, ChromeOS, White, CX3402CBA-DH386-WH\nINR 35,695.58\nINR35,695\n.\n58\nINR 1,986.46 delivery\nShips to India",
+          "image":"https://m.media-amazon.com/images/I/61MWHGFXhIL._AC_UY218_.jpg",
+          "rating" : 2.1,
+          "price": 35695,
+          "MRP": 41999,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 19,
+          "name":"Sponsored\nBiTECOOL 14-inch Windows 11 Laptop Computer, 12GB RAM 256GB SSD Laptop, Intel Celeron J4005 Dual Core up to 2.7GHz, FHD IPS Display, 2.4G/5G WiFi, BT5.1, Webcam, Lightweight and Portable\n5.0 out of 5 stars\n3\nINR 19,065.40\nINR19,065\n.\n40\nShips to India",
+          "image":"https://m.media-amazon.com/images/I/711UpSjC0bL._AC_UY218_.jpg",
+          "rating": 5,
+          "price": 19065,
+          "MRP": 25499,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 20,
+          "name":"Sponsored\nHP 2022 Stream 14\" HD BrightView Laptop, Intel Celeron N4020 Processor, 8GB RAM, 64GB SSD, Intel HD Graphics, 720p Webcam, 1 Year Office 365, Pink, Win 11, 32GB Snowbell USB Card\n4.4 out of 5 stars\n444\nINR 23,228.14\nINR23,228\n.\n14 List:\nINR 24,893.24\nINR24,893.24\nShips to India",
+          "image":"https://m.media-amazon.com/images/I/51kK0BLesNL._AC_UY218_.jpg",
+          "rating": 4.4,
+          "price": 23228,
+          "MRP": 27999,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 21,
+          "name":"Sponsored\nHP 15.6 FHD Newest Flagship Business Laptop, Intel 4-Core i3-1215U up to 4.4GHz (Beat i5-1155G7), 16GB RAM, 1TB NVMe SSD, Fast Charge, Numpad, Bluetooth, Wi-Fi, HDMI, Windows 11,w/GM Accessory\n4.4 out of 5 stars\n109\nINR 44,124.32\nINR44,124\n.\n32\nShips to India\nOptions:\n7 capacities\n7 capacities",
+          "image":"https://m.media-amazon.com/images/I/81QioP9hEjL._AC_UY218_.jpg",
+          "rating": 4.4,
+          "price": 44124,
+          "MRP": 51999,
+          "category": "laptops",
+          "quantity": 27
+          },
+          {
+            "id": 22,
+            "name":"SAMSUNG Galaxy A54 5G A Series Cell Phone, Factory Unlocked Android Smartphone, 128GB w/ 6.4” Fluid Display Screen, Hi Res Camera, Long Battery Life, Refined Design, US Version, 2023, Awesome Black\n4.3 out of 5 stars\n541\nINR 34,133.72\nINR34,133\n.\n72 List:\nINR 37,463.92\nINR37,463.92\nDelivery Mon, Nov 6\nShips to India\nMore Buying Choices\nINR 25,913.12(30 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/61MEp5HIdBL._AC_UY218_.jpg",
+            "price": 34133,
+            "MRP": 37463.92,
+            "category": "phones",
+            "rating": 4.3,
+            "quantity": 25
+            },
+            {
+              "id": 23,
+            "name":"Motorola Moto G Stylus 5G | 2021 | 2-Day Battery | Unlocked | Made for US 4/128GB | 48MP Camera | Cosmic Emerald\n4.3 out of 5 stars\n1,339\nINR 12,081.13\nINR12,081\n.\n13\nDelivery Mon, Nov 6\nShips to India\nMore Buying Choices\nINR 9,543.52(23 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/51bfhhUKhTL._AC_UY218_.jpg",
+            "price": 12081,
+            "MRP": 15463.92,
+            "category": "phones",
+            "rating": 4.3,
+            "quantity": 25
+            },
+            {
+              "id": 24,
+            "name":"Overall Pick\nMotorola Moto G Stylus | 2022 | 2-Day Battery | Unlocked | Made for US 4/128GB | 50MP Camera | Twilight Blue\n4.3 out of 5 stars\n96\nINR 10,456.83\nINR10,456\n.\n83\nShips to India\nOnly 13 left in stock - order soon.\nMore Buying Choices\nINR 9,989.77(18 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/61Q-xaqufQL._AC_UY218_.jpg",
+            "price": 10456,
+            "MRP": 12463.92,
+            "category": "phones",
+            "rating": 4.3,
+            "quantity": 25
+            },
+            {
+              "id": 25,
+            "name":"SAMSUNG Galaxy A14 4G LTE (128GB + 4GB) Unlocked Worldwide (Only T-Mobile/Mint/Metro USA Market) 6.6\" 50MP Triple Camera + (15W Wall Charger) (Silver (SM-A145M/DS))\n4.4 out of 5 stars\n439\nINR 10,989.66\nINR10,989\n.\n66 List:\nINR 11,653.20\nINR11,653.20\nShips to India\nMore Buying Choices\nINR 10,987.99(14 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/717yeZFskGL._AC_UY218_.jpg",
+            "price": 10989,
+            "MRP": 11653.20,
+            "category": "phones",
+            "rating": 4.4,
+            "quantity": 25
+            },
+            {
+              "id": 26,
+            "name":"S22 Ultra 6.6 Inch Smartphone, 480x1014 Pixels HD Screen, MTK6580 Quad Core, 2GB RAM 16GB ROM, 2MP 5MP Front Rear Camera, WIFI BT FM GPS Type C Charging, For Android 8.1 Unlocked Cell Phone(Green)\n2.4 out of 5 stars\n8\nINR 9,731.68\nINR9,731\n.\n68\nShips to India\nOnly 12 left in stock - order soon.",
+            "image":"https://m.media-amazon.com/images/I/71kpOpMpyEL._AC_UY218_.jpg",
+            "price": 9731,
+            "MRP": 12463.92,
+            "category": "phones",
+            "rating": 2.4,
+            "quantity": 25
+            },
+            {
+              "id": 27,
+            "name":"Panasonic Cordless Phone with Answering Machine, Link2Cell Bluetooth, Voice Assistant and Advanced Call Blocking, Expandable System with 4 Handsets - KX-TGD864W (White)\n4.4 out of 5 stars\n319\n1K+ bought in past month\nINR 8,990.71\nINR8,990\n.\n71 List:\nINR 9,989.77\nINR9,989.77\nINR 1,472.78 delivery\nShips to India\nMore Buying Choices\nINR 6,705.36(17 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/71EwYZ1t6BL._AC_UY218_.jpg",
+            "price": 8990,
+            "MRP": 9989.77,
+            "category": "phones",
+            "rating": 4.4,
+            "quantity": 25
+            },
+            {
+              "id": 28,
+            "name":"Motorola Moto G Power 5G | 2023 | Unlocked | Made for US 6/256GB | 50 MPCamera | Mineral Black, 163.06 x 74.8 x 8.45mm\n4.0 out of 5 stars\n180\nINR 20,812.92\nINR20,812\n.\n92 List:\nINR 24,975.67\nINR24,975.67\nDelivery Mon, Nov 6\nShips to India\nMore Buying Choices\nINR 15,705.22(17 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/61QKKdjHV0L._AC_UY218_.jpg",
+            "price": 20812,
+            "MRP": 24975.67,
+            "category": "phones",
+            "rating": 4,
+            "quantity": 25
+            },
+            {
+              "id": 29,
+            "name":"SAMSUNG Galaxy S23+ Plus Cell Phone, Factory Unlocked Android Smartphone, 256GB, 50MP Camera, Night Mode, Long Battery Life, Adaptive Display, US Version, 2023, Lavender\n4.6 out of 5 stars\n129\nLimited time deal\nINR 74,928.67\nINR74,928\n.\n67 List:\nINR 83,254.17\nINR83,254.17\nINR 1,005.72 delivery\nShips to India\nOptions:\n3 sizes\n3 sizes\nMore Buying Choices\nINR 55,247.19(7 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/71LY9chfAKL._AC_UY218_.jpg",
+            "price": 74928,
+            "MRP": 83254.17,
+            "category": "phones",
+            "rating": 4.6,
+            "quantity": 25
+            },
+            {
+              "id": 30,
+            "name":"SAMSUNG Galaxy A53 5G A Series Cell Phone, Factory Unlocked Android Smartphone, 128GB, 6.5” FHD Super AMOLED Screen, Long Battery Life, US Version, Black\n4.3 out of 5 stars\n4,126\nINR 34,092.92\nINR34,092\n.\n92 List:\nINR 37,463.92\nINR37,463.92\nShips to India\nOnly 6 left in stock - order soon.\nClimate Pledge Friendly\nMore Buying Choices\nINR 19,493.33(10 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/216-OX9rBaL._SS200_.png",
+            "price": 34092,
+            "MRP": 37463.92,
+            "category": "phones",
+            "rating": 4.3,
+            "quantity": 25
+            },
+            {
+              "id": 31,
+            "name":"Google Pixel 7a - Unlocked Android Cell Phone - Smartphone with Wide Angle Lens and 24-Hour Battery - 128 GB – Charcoal\n4.2 out of 5 stars\n648\nINR 37,381.50\nINR37,381\n.\n50 List:\nINR 41,544.24\nINR41,544.24\nINR 985.74 delivery\nShips to India\nMore Buying Choices\nINR 29,531.38(20 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/61r7cCpQPlL._AC_UY218_.jpg",
+            "price":37381,
+            "MRP": 41544.24,
+            "category": "phones",
+            "rating": 4.2,
+            "quantity": 25
+            },
+            {
+              "id": 32,
+            "name":"AT&T BL102-3 DECT 6.0 3-Handset Cordless Phone for Home with Answering Machine, Call Blocking, Caller ID Announcer, Audio Assist, Intercom, and Unsurpassed Range, Silver/Black\n4.3 out of 5 stars\n23,760\n1K+ bought in past month\nINR 5,824.52\nINR5,824\n.\n52 List:\nINR 7,322.28\nINR7,322.28\nDelivery Tue, Nov 7\nShips to India\nMore Buying Choices\nINR 2,711.62(12 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/81xDumBYGBL._AC_UY218_.jpg",
+            "price": 5824,
+            "MRP": 7322.28,
+            "category": "phones",
+            "rating": 4.3,
+            "quantity": 25
+            },
+            {
+              "id": 33,
+            "name":"Total by Verizon TCL 30 Z, 32GB, Black - Prepaid Smartphone (Locked)\n4.0 out of 5 stars\n271\nINR 3,320.21\nINR3,320\n.\n21\nDelivery Mon, Nov 6\nShips to India",
+            "image":"https://m.media-amazon.com/images/I/718+xprSIBL._AC_UY218_.jpg",
+            "price": 3320,
+            "MRP": 5500,
+            "category": "phones",
+            "rating": 4.0,
+            "quantity": 25
+            },
+            {
+              "id": 34,
+            "name":"ExAchat A14 5G Unlocked Cell Phones, 6GB + 256GB, 8-Core, 6.82\" HD Display Smartphone, Android 13.0, 6000 mAh,64MP + 24MP, Android Phones That Support Face/Fingerprint Recognition-Purple\n2.5 out of 5 stars\n8\nINR 12,487.42\nINR12,487\n.\n42 List:\nINR 13,319.97\nINR13,319.97\nShips to India\nOnly 5 left in stock - order soon.",
+            "image":"https://m.media-amazon.com/images/I/51W4spsMfNL._AC_UY218_.jpg",
+            "price": 12487,
+            "MRP": 13319.97,
+            "category": "phones",
+            "rating": 2.5,
+            "quantity": 25
+            },
+            {
+              "id": 35,
+            "name":"Motorola Moto G Stylus | 2022 | 2-Day battery | Unlocked| Made for US by Motorola | 6/128GB | 50MP Camera | Twilight Blue\n4.2 out of 5 stars\n2,008\nINR 15,318.09\nINR15,318\n.\n09 List:\nINR 24,975.67\nINR24,975.67\nShips to India\nMore Buying Choices\nINR 9,213.00(26 used & new offers)",
+            "image":"https://m.media-amazon.com/images/I/612yrAXpo-L._AC_UY218_.jpg",
+            "price": 15318,
+            "MRP": 24975.67,
+            "category": "phones",
+            "rating": 4.2,
+            "quantity": 25
+            },
+            {
+              "id": 36,
+            "name":"SAMSUNG Galaxy A14 5G A Series Cell Phone, Factory Unlocked Android Smartphone, 64GB w/Expandable Storage, Long Battery Life, 13MP Camera, 6.6\" Infinite Display Screen, US Version, 2023, Black\n4.2 out of 5 stars\n524\nINR 16,650.17\nINR16,650\n.\n17\nINR 977.41 delivery\nShips to India\nClimate Pledge Friendly\nMore Buying Choices\nINR 12,101.95(19 used & new offers)\n+1 color/pattern",
+            "image":"https://m.media-amazon.com/images/I/216-OX9rBaL._SS200_.png",
+            "price": 16650,
+            "MRP": 37463.92,
+            "category": "phones",
+            "rating": 4.2,
+            "quantity": 25
+            },
+            {
+              "id": 37,
+              "title": "Apple 20W ,USB-C Power Charging Adapter for iPhone, iPad & AirPods  (White)",
+              "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/battery-charger/u/b/p/-original-imagqjh6gg35h7hz.jpeg?q=70",
+              "price": 1699,
+              "MRP": 1900,
+              "category": "headphones",
+              "rating": 4.3,
+              "quantity": 121
+            },
+    ]
+
+localStorage.setItem('cartItems', JSON.stringify(products));
+const [cartItems, setCartItems] = useState([]);
+const[page, setpage]= useState(0);
+const limit= 6;
+
+const handlenext=()=>{
+  setpage(()=>{
+    if(page>=2){
+      setpage(page);
+    }
+    else{
+      setpage(page+1);
+    }
+  });
+}
+
+const handlepre=()=>{
+  setpage(()=>{
+    if(page<=1){
+      setpage(page);
+    }else{
+      setpage(page+1);
+    }
+  });
+}
+
+useEffect(() => {
+  const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  setCartItems(storedCartItems);
+
+}, [page, limit]);
+
+return (
     <div>
-      <h1>Products Page</h1>
+    <h1> Product's Page</h1>
+    <h2>COME,GRAB,SHOW</h2>
+
+    <div className='sortngbtn'>
+      <select>
+        <option value="sort">Sort</option>
+        <option value="sorthtl">Sort Price High to Low</option>
+        <option value="sortlth">Sort Price Low to High</option>
+      </select>
+      <select>
+        <option value="filter">Filter By</option>
+        <option value="category">Category</option>
+        <option value="rating">Rating</option>
+      </select>
     </div>
+    <div className='productspage' >
+    <div>
+      {cartItems.map((data) =>(
+        <Link key={data.id}>
+          <img src={data.image} alt='loading' />,
+          <p>{data.name}</p>
+          <p>Price:{data.price}</p>
+          <p>Rating:{data.rating}</p>
+        </Link>
+      ))}
+      </div>
+     
+    </div>
+    <div>
+    <button onClick={handlepre}>Pre</button>
+      <button onClick={handlenext}>Next</button>
+    </div>
+  </div>
+    
   )
+
 }
 
 export default Products

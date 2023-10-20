@@ -1,0 +1,41 @@
+body{
+    width: 100%;
+}
+
+.productspage{
+    width: 80%;
+    margin: auto;
+    
+}
+.productspage> div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 45px;
+    padding: 20px;
+    overflow: hidden;
+    
+}
+.productspage>div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.productspage>img{
+    width: 50%;
+    height: 50%;
+}
+.productspage>p{
+    font-size: 2px;
+}
+.sortngbtn{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.sortngbtn>select{
+    border: none;
+    font-size: large;font-weight: bold;
+    padding: -10px;
+}
+
