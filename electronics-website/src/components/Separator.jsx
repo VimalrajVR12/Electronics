@@ -5,7 +5,7 @@ const Separator = () => {
     borderTop: 0,
     borderLeft: 0,
     borderRight: 0,
-    borderBottom: "12px dotted darkgray",
+    borderBottom: "12px dotted lightgray",
     width: "50px",
     margin: "20px auto"
   }
