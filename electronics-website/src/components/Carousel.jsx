@@ -43,9 +43,7 @@ const Carousel = ({ data, width }) => {
   return (
     <div className={styles.container}>
       <span onClick={scrollBack}>{prevSVG}</span>
-      <div className={styles.carousel} ref={containerRef}>
-        {elements}
-      </div>
+      <div className={styles.carousel} ref={containerRef}>{elements}</div>
       <span onClick={scrollAhead}>{nextSVG}</span>
     </div>
   );

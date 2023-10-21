@@ -6,6 +6,7 @@
 }
 .container svg{
     height: 50px;
+    display: auto;
 }
 .carousel{
     display: grid;
@@ -19,9 +20,6 @@
 }
 .carousel::-webkit-scrollbar{
     display: none;
-}
-.container svg {
-            display: auto;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 }
