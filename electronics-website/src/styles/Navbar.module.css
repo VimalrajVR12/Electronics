@@ -17,8 +17,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: fit-content;
-    gap: 10px;
+    gap: 15px;
 }
 .searchContainer{
     width: 400px;
