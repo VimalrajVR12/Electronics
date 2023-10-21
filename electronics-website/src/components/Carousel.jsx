@@ -38,7 +38,7 @@ const Carousel = ({ data, width }) => {
           left: -scrollW,
         });
       else clearInterval(interval);
-    }, 2);
+    }, 1);
   };
   return (
     <div className={styles.container}>
