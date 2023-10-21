@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { crossSVG, hamburgerSVG } from './SVGs';
 import { NavLink } from 'react-router-dom';
-const Hamburger = () => {
+const Hamburger = ({className}) => {
   const closed = { state: "close", style: {translate:"5000px"} };
   const [currState,setCurrState] = useState(closed)
   const opened = {
@@ -18,10 +18,12 @@ const Hamburger = () => {
   const handleToggle = () =>
           setCurrState((prev) => (prev.state === "close" ? opened : closed))
   return (
-    <div>
+    <div className={className}>
       <span onClick={handleToggle}>{hamburgerSVG}</span>
       <aside style={currState.style}>
-        <span id='crossSVGContainer' onClick={handleToggle}>{crossSVG}</span>
+        <span id="crossSVGContainer" onClick={handleToggle}>
+          {crossSVG}
+        </span>
         <NavLink onClick={handleToggle} title="Products" to="/products">
           Products
         </NavLink>

@@ -20,6 +20,7 @@
     width: fit-content;
     gap: 10px;
 }
+
 .searchInput{
     width: 400px;
     border: 1px solid darkgray;
@@ -30,6 +31,9 @@
     font-size: 18px;
     outline: none;
     background-color: inherit;
+}
+.hamburger{
+    display: none;
 }
 aside{
     position: absolute;
@@ -60,6 +64,8 @@ aside a:hover{
     .container {
         padding: 15px 40px;
     }
+    
+
 }
 @media screen and (min-width: 425px) and (max-width: 767px) {
     .searchInput {
@@ -67,6 +73,12 @@ aside a:hover{
         font-size: 12px;
         padding: 5px 10px;
     }
+    .hamburger {
+        display: block;
+    }
+        .options{
+            display: none;
+        }
     .container {
         padding: 15px 25px;
     }

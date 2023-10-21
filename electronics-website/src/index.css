@@ -31,13 +31,13 @@ body {
 svg {
   fill: #508ffb;
   transition: all .2s ease-in;
-  height: 2em;
+  height: 2.5em;
   padding: 0.1em;
 }
 svg:hover{
   cursor: pointer;
 fill: royalblue;
-height: 2em;
+transform: scale(1.05);
 }
 a.active svg {
   fill: lightgray;

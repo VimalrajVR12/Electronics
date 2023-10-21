@@ -13,23 +13,10 @@ import {
 import Hamburger from './Hamburger';
 const Navbar = () => {
   const isAuth = false;
-  const [width, setWidth] = useState(1024);
-  const elRef = useRef();
   const interval = useRef(null);
-  useEffect(() => {
-    const update = () => {
-      setWidth((prev) => {
-      console.log(prev);
-      return elRef.current.offsetWidth;
-      });
-    };
-    if (!interval.current) interval.current = setInterval(update, 250);
-    return () => {
-    clearInterval(interval.current);
-    };
-    }, []);
+  
   return (
-    <div ref={elRef} className={styles.container}>
+    <div className={styles.container}>
       <NavLink title="Home" to="/">
         {homeSVG}
       </NavLink>
@@ -38,9 +25,7 @@ const Navbar = () => {
         className={styles.searchInput}
         placeholder="Search Products"
       />
-      {width < 768 ? (
-        <Hamburger/>
-      ) : (
+      <Hamburger className={styles.hamburger}/>
         <div className={styles.options}>
           <NavLink title="Products" to="/products">
             {productSVG}
@@ -55,7 +40,6 @@ const Navbar = () => {
             {isAuth ? loggedinSVG : loginSVG}
           </NavLink>
         </div>
-      )}
     </div>
   );
 }

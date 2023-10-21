@@ -78,28 +78,12 @@ const tvs = [
   },
 ];
 const Home = () => {
-  const [width, setWidth] = useState();
-  const elRef = useRef();
-  const interval = useRef(null);
-  useEffect(() => {
-    const update = () => {
-      setWidth((prev) => {
-        console.log(prev);
-        return elRef.current.offsetWidth;
-      });
-    };
-    if (!interval.current) interval.current = setInterval(update, 1000);
-    return () => {
-      clearInterval(interval.current);
-      console.log("cleared");
-    };
-  }, []);
   return (
-    <div ref={elRef} className={styles.container}>
+    <div className={styles.container}>
       <img className={styles.img} src="/banner.webp" alt="banner" />
       <Separator />
       <Heading body={"TVs"} />
-      <Carousel data={tvs} width={width}/>
+      <Carousel data={tvs}/>
       <Separator />
     </div>
   );
