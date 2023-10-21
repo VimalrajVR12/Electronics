@@ -19,21 +19,27 @@ const Carousel = ({ data, width }) => {
     );
   });
   const scrollAhead = () => {
-    containerRef.current.scrollBy({
-      left: elRef.current.getBoundingClientRect().width + 15,
-      behavior: "smooth",
-    });
+    let times = 0;
+    const scrollW = (elRef.current.getBoundingClientRect().width + 15)/50
+    const interval = setInterval(()=>{
+      if(times++<50)containerRef.current.scrollBy({
+        left: scrollW,
+      })
+      else clearInterval(interval)
+    },1)
   };
 
   const scrollBack = () => {
-    containerRef.current.scrollBy({
-      left: -elRef.current.getBoundingClientRect().width-15,
-      behavior: "smooth",
-    });
+    let times = 0;
+    const scrollW = (elRef.current.getBoundingClientRect().width + 15) / 50;
+    const interval = setInterval(() => {
+      if (times++ < 50)
+        containerRef.current.scrollBy({
+          left: -scrollW,
+        });
+      else clearInterval(interval);
+    }, 2);
   };
-  useEffect(()=>{
-    console.log(elRef.current.getBoundingClientRect().width)
-  },[])
   return (
     <div className={styles.container}>
       <span onClick={scrollBack}>{prevSVG}</span>

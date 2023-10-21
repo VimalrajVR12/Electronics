@@ -24,13 +24,13 @@
 .searchInput{
     width: 400px;
     border: 1px solid darkgray;
+    background-color: rgb(245, 245, 245);
     height: 2.5em;
     padding: 5px 20px;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     outline: none;
-    background-color: inherit;
 }
 .hamburger{
     display: none;
