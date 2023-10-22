@@ -7,7 +7,6 @@ const Carousel = ({ data, width }) => {
   const containerRef = useRef();
   const elRef = useRef();
   const elements = data.map((el, i) => {
-    console.log(el)
     if(i<12)return (
       <ProductContainer
         elRef={i===0?elRef:null}

@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel';
 import Separator from "../components/Separator"
 import Heading from '../components/Heading';
 import Footer from '../components/Footer';
+import PreRegister from "../components/PreRegister";
 const tvs = [
   {
     image: "./tvs/P635.webp",
@@ -443,7 +444,8 @@ const Home = () => {
     <div className={styles.container}>
       <img className={styles.img} src="/banner.jpg" alt="banner" />
       <Separator />
-
+      <PreRegister />
+      <Separator />
       <Heading body={"Headphones"} />
       <Carousel data={headphones} />
       <Separator />
@@ -455,7 +457,7 @@ const Home = () => {
       <Separator />
       <Heading body={"TVs"} />
       <Carousel data={tvs} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
