@@ -32,14 +32,12 @@
     cursor: pointer;
     border-radius: 3px;
     font-size: 16px;
-    background-color: white;
+    color: white;
+    background-color: #508ffb;
     border: 1px solid lightgray;
     padding: 10px 20px;
 
 }
 .container button:hover{
-    transform: scale(1.05);
-}
-.container button:active{
-    transform: scale(1.025);
+    background-color: royalblue;
 }

@@ -35,14 +35,16 @@
 .container input{
     width: 100%;
     height: 50px;
+    margin: 5px;
     border-radius: 3px;
     padding: 10px 20px;
     outline: none;
     border: 1px solid lightgray;
 }
 .container .button{
-    background-color: white;
+    background-color: #508ffb;
+    color: white;
 }
 .container .button:hover{
-    background-color: rgb(250, 250, 250);
+    background-color: royalblue;
 }
