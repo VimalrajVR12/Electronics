@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from "../styles/ProductContainer.module.css"
 import { starSVG } from './SVGs';
 const ProductContainer = ({elRef,img,rating, title,price,discountPrice }) => {
+  const handleClick=(event)=>{
+  }
   return (
-    <div ref={elRef} className={styles.container}>
+    <div onClick={handleClick} ref={elRef} className={styles.container}>
       <img src={img} alt="product" />
       <div className={styles.details}>
         <div className={styles.top}>

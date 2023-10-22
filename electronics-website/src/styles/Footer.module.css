@@ -9,7 +9,7 @@
     height: 4em;
 }
 .container svg:hover{
-    transform: translate(1.01);
+    transform: translate(1.02);
 }
 .fbSVG svg{
     fill: rgb(59,89,152);

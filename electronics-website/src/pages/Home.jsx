@@ -3,6 +3,7 @@ import Carousel from '../components/Carousel';
 import Separator from "../components/Separator"
 import Heading from '../components/Heading';
 import Footer from '../components/Footer';
+import PreRegister from "../components/PreRegister";
 const tvs = [
   {
     image: "./tvs/P635.webp",
@@ -414,7 +415,7 @@ const laptops = [
     description: `The GeForce RTX 30 Series Laptops epitomise outstanding technology, providing unmatched performance for gamers and creators alike. Witness the power of Ampere, combined with RT Cores, Tensor Cores, and streaming multiprocessors, redefining realism and transforming your overall experience. Embrace the cool and collected performance, enjoy up to 7 hours of productivity, and indulge in the world of Hi-Resolution Audio, where music comes alive in its purest form.`,
   },
   {
-    image: "./laptops/gf63.webp",
+    image: "./laptops/vivobook-s14.webp",
     name: "Asus Vivobook S14, Black",
     MRP: "84,990",
     price: "54,990",
@@ -430,7 +431,7 @@ const laptops = [
     description: `The GeForce RTX 30 Series Laptops epitomise outstanding technology, providing unmatched performance for gamers and creators alike. Witness the power of Ampere, combined with RT Cores, Tensor Cores, and streaming multiprocessors, redefining realism and transforming your overall experience. Embrace the cool and collected performance, enjoy up to 7 hours of productivity, and indulge in the world of Hi-Resolution Audio, where music comes alive in its purest form.`,
   },
   {
-    image: "./laptops/flow_x13.webp",
+    image: "./laptops/tuf_f15.webp",
     name: "Asus TUF Gaming F15, Graphite Black",
     MRP: "74,990",
     price: "50,990",
@@ -443,6 +444,8 @@ const Home = () => {
     <div className={styles.container}>
       <img className={styles.img} src="/banner.jpg" alt="banner" />
       <Separator />
+      <PreRegister />
+      <Separator />
       <Heading body={"Headphones"} />
       <Carousel data={headphones} />
       <Separator />
@@ -454,7 +457,7 @@ const Home = () => {
       <Separator />
       <Heading body={"TVs"} />
       <Carousel data={tvs} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
