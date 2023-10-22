@@ -1,4 +1,3 @@
-import {useState,useRef,useEffect} from 'react'
 import styles from "../styles/Home.module.css"
 import Carousel from '../components/Carousel';
 import Separator from "../components/Separator"
@@ -6,88 +5,112 @@ import Heading from '../components/Heading';
 import Footer from '../components/Footer';
 const tvs = [
   {
-    name: "Blaupunkt CyberSound",
-    image: "/tvs/blaupunkt.png",
-    MRP: "24,999",
-    price: "19,999",
-    rating: "4.4",
+    image: "./tvs/P635.webp",
+    name: "TCL P635 Pro, 75 inch",
+    MRP: "99,999",
+    price: "74,999",
+    rating: 4.2,
+    description:
+      "You can experience the colours come to life on this TCL TV. With 4K HDR, this TV lets you experience exceptional brightness and detailing. The Dynamic Colour Enhancement optimises the colour vibrancy to ensure high-quality visuals. The Dolby Atmos audio provides a complete audio experience at the comfort of your home. The AiPQ Engine Gen 2 enables you with lag-free video. The bezel-less design of this TV provides a more immersive visual experience. With Google TV you can access unlimited entertainment so that you can stream online for movies, series, sports, and much more.",
   },
   {
-    name: "Kodak 4K",
-    image: "/tvs/kodak.png",
-    MRP: "19,999",
-    price: "14,999",
-    rating: "4.5",
+    image: "./tvs/EnvisionX.webp",
+    name: "Motorola EnvisionX, 70 inch",
+    MRP: "94,999",
+    price: "69,999",
+    rating: 4.4,
+    description:
+      "This Motorola HDR10 TV brings to you 6 display modes, 4 sound modes, and 3D Dolby audio. It provides a crystal-clear display and offers 1.07 billion vibrant colours that elevate your entertainment experience. This bezel-less Google TV has a Mediatek quad-core processor that enables seamless navigation. You can mirror your favourite content on the TV screen from your smartphone with the built-in Chromecast feature.",
   },
   {
-    name: "Moto Envision",
-    image: "/tvs/moto.png",
-    MRP: "29,999",
-    price: "19,999",
-    rating: "4.2",
-  },
-  {
-    name: "Samsung TV",
-    image: "/tvs/Samsung.png",
-    MRP: "49,999",
+    image: "./tvs/Dwinci4k.webp",
+    name: "Sens Dwinci 4K, 65 inch",
+    MRP: "47,999",
     price: "39,999",
-    rating: "4.1",
+    rating: 4.4,
+    description:
+      "With the SENS QLED TV's exceptional capabilities, take advantage of stunning graphics and top-notch entertainment. This TV gives you the opportunity to discover a universe that will provide you with an experience beyond your senses owing to its magnificent Dolby Vision display and superior sound quality. With this Google TV, you also have simple mobile device control over your TV and access to a wide range of content in a number of genres and languages. Additionally, the superb bezel-less design and sizable viewing area of this TV will treat your eyes to magnificent images. The 20 W speakers on this TV also deliver stunning clarity and an amazing experience. This TV's excellent audio system enables you to comprehend every track and rhythm with breathtaking clarity.",
   },
   {
-    name: "Moto Envision",
-    image: "/tvs/moto.png",
-    MRP: "39,999",
-    price: "34,999",
-    rating: "4.3",
+    image: "./tvs/EnvisionX65.webp",
+    name: "Motorola EnvisionX, 65 inch",
+    MRP: "44,999",
+    price: "41,999",
+    rating: 4.3,
+    description:
+      "This Motorola HDR10 TV brings to you 6 display modes, 4 sound modes, and 3D Dolby audio. It provides a crystal-clear display and offers 1.07 billion vibrant colours that elevate your entertainment experience. This bezel-less Google TV has a Mediatek quad-core processor that enables seamless navigation. You can mirror your favourite content on the TV screen from your smartphone with the built-in Chromecast feature.",
   },
   {
-    name: "Thompson TV",
-    image: "/tvs/thompson.png",
-    MRP: "19,999",
-    price: "14,999",
-    rating: "4.0",
+    image: "./tvs/Q55H1001.webp",
+    name: "Thomson 4K, 55 inch",
+    MRP: "38,999",
+    price: "30,999",
+    rating: 4.5,
+    description:
+      "You can enjoy a cinema-like experience from the comfort of your home with the Thomson 126 cm (50) QLED Smart Google TV. With its sleek and sophisticated style, this TV can grab everyone's attention. In addition, this TV's compatibility with HDR10+ and Dolby Vision results in a vivid and realistic cinematic image. Offering up to 40 W of power to its Dolby Atmos sound system, this TV ensures a theatre-like audio experience. And, this TV can meet all of your entertainment needs because it has Google TV support and an integrated Google Assistant. Furthermore, this TV can manage both web browsing and streaming movies.",
   },
   {
-    name: "Blaupunkt CyberSound",
-    image: "/tvs/blaupunkt.png",
-    MRP: "24,999",
-    price: "19,999",
-    rating: "4.6",
+    image: "./tvs/MiA32.webp",
+    name: "Mi A HD Ready, 32 inch",
+    MRP: "14,999",
+    price: "10,999",
+    rating: 4.4,
+    description:
+      "With the Xiaomi TV, your living room becomes a gateway to an entertainment paradise. Indulge in breathtaking visuals, captivating sound, and an array of content that suits your preferences perfectly. Whether you're a movie enthusiast, a sports fanatic, or a binge-watching connoisseur, this TV caters to your every need.",
   },
   {
-    name: "Kodak 4K",
-    image: "/tvs/kodak.png",
-    MRP: "19,999",
-    price: "14,999",
-    rating: "4.2",
+    image: "./tvs/mix50.webp",
+    name: "Mi X UHD, 50 inch",
+    MRP: "34,999",
+    price: "30,999",
+    rating: 4.3,
+    description:
+      "The Xiaomi X Series TV presents an unparalleled home entertainment experience with its 4K clarity, bezel-less design, Dolby Vision, Vivid Picture Engine, extensive colour gamut, MEMC Engine Reality Flow, powerful sound, Google TV integration, Patchwall and Patchwall+ access, optimised performance, and future-ready connectivity. Elevate your entertainment journey with the Xiaomi X Series TV and embark on an extraordinary cinematic adventure within the comforts of your own home.",
   },
   {
-    name: "Moto Envision",
-    image: "/tvs/moto.png",
-    MRP: "29,999",
-    price: "19,999",
-    rating: "4.0",
+    image: "./tvs/UR7500.webp",
+    name: "Mi X UHD, 50 inch",
+    MRP: "31,990",
+    price: "27,990",
+    rating: 4.4,
+    description:
+      "The LG UR7500 TV is a masterpiece of visual technology, delivering breathtaking picture quality, immersive sound, and a range of features that enhance your entertainment experience. With its AI-powered capabilities, seamless connectivity, and gaming optimisation, this TV is a true game-changer. Get ready to be mesmerised by the vivid colours, remarkable details, and cinema-like experience right in your own living room. Elevate your home entertainment to new heights with the LG UR7500 TV.",
   },
   {
-    name: "Samsung TV",
-    image: "/tvs/Samsung.png",
-    MRP: "49,999",
-    price: "39,999",
-    rating: "4.3",
+    image: "./tvs/55X74K.webp",
+    name: "Sony UHD, 55 inch",
+    MRP: "55,990",
+    price: "52,990",
+    rating: 4.6,
+    description:
+      "Experience a jitter-free and colour-enriched visual experience with the Sony TV which is designed to take your entertainment to an elevated level. This TV is driven by the X1 processor which helps in reducing the noise and boosts the visual quality. Furthermore, the impressive 4K X-Reality PRO of this TV amplifies the visuals and enables you to appreciate up to 4K picture clarity. Additionally, with Motionflow XR 100 sported in this TV, there is no stopping for your entertainment, and you can flawlessly enjoy stutter-free visuals no matter how graphically rich the content is.",
   },
   {
-    name: "Moto Envision",
-    image: "/tvs/moto.png",
-    MRP: "39,999",
-    price: "34,999",
-    rating: "4.1",
+    image: "./tvs/UA55CUE70AKLXL.webp",
+    name: "Samsung Crystal Vision, 55 inch",
+    MRP: "49,990",
+    price: "43,990",
+    rating: 4.4,
+    description:
+      "You can enjoy unlimited entertainment at the comfort of your home with this smart TV. The PurColour technology of this TV delivers vibrant and lifelike picture quality with its wide range of colours. You can view the vibrant colours in its true glory, thanks to the 4K upscaling technology. With the help of voice assistants you can easily find your favourite movies, shows, and much more by using voice commands. Its sleek design with thin bezel provide more screen space and adds beauty to your elegant room.",
   },
   {
-    name: "Thompson TV",
-    image: "/tvs/thompson.png",
-    MRP: "19,999",
-    price: "14,999",
-    rating: "4.5",
+    image: "./tvs/65A7K.webp",
+    name: "Hisense Tornado, 65 inch",
+    MRP: "99,990",
+    price: "49,990",
+    rating: 4.3,
+    description:
+      "The Hisense A7K TV with its Front Fire JBL Sound Bar is a gateway to a world of extraordinary entertainment. Feel the magic of live performances, see colors come alive, and immerse yourself in a personalized entertainment experience. With innovative features, seamless connectivity, and unrivaled audiovisual quality, the Hisense A7K takes your home entertainment to dazzling new heights. Elevate your viewing experience and let the Hisense A7K transform your living room into a captivating theater of dreams.",
+  },
+  {
+    image: "./tvs/iFF55U62.webp",
+    name: "iFFalcon U62, 65 inch",
+    MRP: "29,990",
+    price: "24,990",
+    rating: 4.2,
+    description:
+      "With the iFFALCON TV, which was meticulously created to enhance your visual experience, you can watch your favourite movie and experience every action with vivid clarity and amazing multimedia quality. A standout viewing experience with eye-catching luminance, great shadow definition, and brilliant colour reproduction is provided by this TV's HDR function. Additionally, this TV's Dynamic Colour Enhancement technology scales up the low coloured pictures to colour-enriched pictures, enhancing your enjoyment of TV. Moreover, the borderless design of this TV provides for a large viewing area and helps you to fully immerse yourself in the programme you are watching.",
   },
 ];
 const phones = [
