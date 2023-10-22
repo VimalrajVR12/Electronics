@@ -16,18 +16,7 @@ const Navbar = () => {
       <Link to="/products">Products</Link>
       <Link to="/wishlist">WishList</Link>
       <Link to="/cart">Cart</Link>
-      <Link to=""> <h4>
-        {isAuthenticated && <p>{user.name}</p>}
-      </h4>
-      <h4>
-        {isAuthenticated?<h4>  <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-      Log Out
-    </button></h4>
-    :  <h4>
-      <button onClick={() => loginWithRedirect()}>Log In</button>;
-      </h4>
-    }
-      </h4></Link>
+      <Link to="/login">Login</Link>
      
     </div>
   )
