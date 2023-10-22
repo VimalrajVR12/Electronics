@@ -1,12 +1,10 @@
-
-.container{
-    border: "5px solid red";
-    margin: "50px"
+.container {
+  /* border: "5px solid red"; */
+  margin: "50px";
 }
 
-
-.button{
-    border-radius: 50%;
-    border: none;
-    background-color: transparent;
+.button {
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
 }

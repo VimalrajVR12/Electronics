@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin: "50px";
+  border-radius: 12px;
+  background-color: rgba(170, 166, 166, 0.308);
+}
+
+.button {
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.PaymentBtn {
+  padding: 15px 80px;
+  background-color: #687eff;
+  color: white;
+  font-weight: bold;
+  border-style: none;
+}
+.priceDetails {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.priceContainer {
+  height: 50%;
+  padding: 15px 10px;
+  background-color: white;
+  margin-top: 87px;
+  border-radius: 12px;
+  margin-right: 10px;
+  width: "25%";
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .price {
+    display: flex;
+  }
+  .priceContainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .form {
+    display: none;
+  }
+  .price {
+    display: flex;
+    justify-content: center;
+  }
+}
