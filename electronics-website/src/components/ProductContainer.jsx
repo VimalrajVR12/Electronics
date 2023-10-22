@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "../styles/ProductContainer.module.css"
+import { starSVG } from './SVGs';
 const ProductContainer = ({elRef,img,rating, title,price,discountPrice }) => {
   return (
     <div ref={elRef} className={styles.container}>
@@ -7,7 +8,7 @@ const ProductContainer = ({elRef,img,rating, title,price,discountPrice }) => {
       <div className={styles.details}>
         <div className={styles.top}>
           <p className={styles.title}>{title}</p>
-          <p>{rating}</p>
+          <p>{rating}{starSVG}</p>
         </div>
         <div className={styles.bottom}>
           <p className={styles.price}>{price}</p>
