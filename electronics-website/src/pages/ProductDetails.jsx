@@ -19,10 +19,14 @@ function ProductDetails() {
   return (
     <div className="product-details-container">
       <img className="product-image" src={product.image} alt={product.name} />
-      <h1 className="product-title">{product.name.slice(0, 60)}</h1>
+      <h1 className="product-title">{product.name.slice(0, 40)}</h1>
       <p className="product-price">Price: ${product.price}</p>
       <p className="product-rating">Rating: {product.rating}</p>
       <p className="product-description">Description: {product.name}</p>
+      <button
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }
