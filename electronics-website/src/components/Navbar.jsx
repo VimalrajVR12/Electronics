@@ -446,11 +446,14 @@ const Navbar = () => {
     ...tvs.map((el) => ({ ...el, category: "tvs" })),
     ...laptops.map((el) => ({ ...el, category: "laptops" })),
   ];
-  console.log(products)
   const [results,setResults] = useState(["No results found"]);
   const [search,setSearch] = useState("")
   useEffect(()=>{
-    setResults(products.filter(el=>el.name.includes(search)))
+    setResults(products.filter(el=>{
+      const name = el.name.toLowerCase();
+      const query = search.toLowerCase();
+      return name.includes(query);
+    }))
   },[search])
   return (
     <div className={styles.container}>
