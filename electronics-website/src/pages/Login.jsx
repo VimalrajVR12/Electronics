@@ -80,11 +80,17 @@ import InputControl from './InputControl'
 import { Link, useNavigate } from 'react-router-dom'
 // import styles from "./Login.module.css"
 import styles from "../styles/Login.module.css"
-import { auth } from './firebase'
+// import { auth, provider } from './firebase'
 import {signInWithEmailAndPassword} from 'firebase/auth'
+import { signInWithPopup } from 'firebase/auth'
+import Home from './Home'
+import { auth, provider } from './firebase'
 
 const Login = () => {
-    
+  
+  // provider
+  // auth
+    // provider
     const navigate=useNavigate();
   const [values,setValues]=useState({
 
@@ -111,6 +117,17 @@ navigate('/')
     console.log(errormessage);
   });
 }
+// google auth
+const handleClick=()=>{
+   signInWithPopup(auth,provider).then((data)=>{
+      setValues(data.user.email);
+      localStorage.setItem("email",data.user.email)
+   })
+}
+useEffect(()=>{
+  setValues(localStorage.getItem('email'))
+},[])
+
   return (
      <div className={styles.container}>
     <div className={styles.innerBox}>
@@ -124,7 +141,14 @@ navigate('/')
     <span><Link to="/signup">Sign up</Link></span></p>
     {/* <Link/> */}
 </div>
+{/* <Home></Home> */}
+      {/* <button>Signin with Google</button> */}
+    
+        
+      {values? navigate('/'):<button className={styles.btn} onClick={handleClick}>Sign In with Google</button>}
+    
     </div>
+      
       
     </div>  )
 }
