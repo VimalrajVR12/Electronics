@@ -14,7 +14,7 @@ SAW Electronics is your go-to online store for all your electronic needs. We off
 
 ## Demo
 
-- [Live Demo](https://green-paradise-electronics.netlify.app)
+- [Coming soon.](https://green-paradise-electronics.netlify.app)
 
 ## Features
 
@@ -25,22 +25,3 @@ SAW Electronics is your go-to online store for all your electronic needs. We off
 - **Personalized User Accounts:** Create an account to track your orders, save favorite items, and receive personalized recommendations.
 - **Responsive Design:** Enjoy a seamless shopping experience on both desktop and mobile devices with our responsive design.
 
-## Screenshots
-
-Check out our user-friendly interface on various devices:
-
-- ![Desktop](./Images/Home-Page_Desktop.png)
-- ![Laptop](./Images/Home-Page_Laptop.png)
-- ![Tablet](./Images/Home-Page_Tablet.png)
-- ![Mobile](./Images/Home-Page_Mobile.png)
-
-## Contributors
-
-Meet the team behind SAW Electronics:
-
-
-- **Dipanshu Singh**
-  - [LinkedIn](https://www.linkedin.com/in/dipanshu-singh-645821153)
-  - [GitHub](https://github.com/Dipanshu-Singh-Dev/)
-
-Thank you for choosing SAW Electronics. Enjoy your tech shopping experience!
