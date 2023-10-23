@@ -26,6 +26,6 @@ SAW Electronics is your go-to online store for all your electronic needs. We off
 - **Responsive Design:** Enjoy a seamless shopping experience on both desktop and mobile devices with our responsive design.
 
 ##Screenshots
- - ![PC](/SAW_home_pc.png)
- - ![Mobile](/SAW_home_mobile.png)
- - ![Tablet](/SAW_home_tab.png)
+ - ![PC](SAW_home_pc.png)
+ - ![Mobile](SAW_home_mobile.png)
+ - ![Tablet](SAW_home_tab.png)
