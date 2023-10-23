@@ -1,7 +1,5 @@
 # SAW - Your Ultimate Tech Haven
 
-![Green Paradise Electronics Logo](./Images/logo_green_heaven.png)
-
 ## Table of Contents
 
 1. [Description](#description)
