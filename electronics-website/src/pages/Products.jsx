@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { searchSVG } from "../components/SVGs"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
-import "../styles/products.css"
+import "../styles/Products.css"
 
 
 

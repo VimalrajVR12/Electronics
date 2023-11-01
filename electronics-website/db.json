@@ -475,7 +475,7 @@
       "price": 10990,
       "MRP": 12900,
       "category": "headphones",
-      "quantity": 2
+      "quantity": 1
     },
     {
       "id": 4,
@@ -485,7 +485,7 @@
       "price": 1499,
       "MRP": 2299,
       "category": "headphones",
-      "quantity": 2
+      "quantity": 1
     }
   ],
   "wishlist": [

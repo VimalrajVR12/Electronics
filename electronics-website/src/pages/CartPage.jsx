@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from "axios"
-import styles from "./cartPage.module.css"
+// import styles from "./cartPage.module.css"
+import "../styles/CartPage.css"
 import CartProduct from '../components/CartProduct'
+import { AuthContext } from '../context/AuthContext'
 
 
 const coupon = [
@@ -25,7 +28,7 @@ const parentStyle = {
   display: "flex", 
   flexDirection: "row", 
   columnGap: "20px",   
-  border: "5px solid red", 
+  // border: "5px solid blue", 
   margin: "50px"
 }
 
@@ -43,12 +46,15 @@ const CartPage = () => {
   const [code, setCode] = useState("");
   const [msg, setMsg] = useState("");
 
+  const value = useContext(AuthContext)
+  const navigate = useNavigate();
+
 
   
   const fetchCart = async() => {
     try {
       setCart(false);
-      let data = await axios.get(`${baseURL}/cart`);
+      let data = await axios.get(`${baseURL}`);
       console.log(data.data);
       setCartData(data.data);
       setCart(true);
@@ -85,6 +91,7 @@ const CartPage = () => {
     }, 0);
     // console.log(total1)
     setTotalMRP(total1);
+  }
 
   const handleTransfer = async (id) => {
     handleDelete(id);
@@ -167,7 +174,7 @@ const CartPage = () => {
           
           
         </div>
-        <button>Proceed to Payment</button>
+        <button onClick={() => { navigate("/payments") }}>Proceed to Payment</button>
       </div>
     </div>
   );
