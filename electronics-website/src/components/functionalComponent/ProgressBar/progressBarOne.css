@@ -1,0 +1,51 @@
+.ProgressBarOne_container {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+.ProgressBarOne_outer {
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+    border-radius: 50%;
+    /* box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7), */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.ProgressBarOne_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.ProgressBarOne_number{
+    font-weight: 600;
+}
+
+.ProgressBarOne_container circle{
+    fill: none;
+    stroke: green;
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim2 2s linear forwards;
+}
+
+.ProgressBarOne_container svg{
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anim2 {
+    100%{
+        stroke-dashoffset: 75;
+    }
+}

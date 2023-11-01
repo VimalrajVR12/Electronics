@@ -1,0 +1,24 @@
+.container{
+position: relative;
+}
+.container img{
+    border-radius: 0;
+    height: 100%;
+}
+#redPill,#bluePill{
+position: absolute;
+height: 75px;
+width: 75px;
+background-color: transparent;
+cursor: pointer;
+outline: none;
+border: none;
+}
+#redPill{
+    top: 38%;
+    right:63%;
+}
+#bluePill{
+    top: 43%;
+    right: 24%;
+}

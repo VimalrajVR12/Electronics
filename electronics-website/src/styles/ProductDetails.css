@@ -1,0 +1,202 @@
+.productDetails_container{
+  padding: 10px;
+}
+
+.productDetails_product{
+  display: flex;
+  column-gap: 20px;
+}
+
+.productDetails_imageContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 10px;
+}
+
+.productDetails_image{
+  padding: 10px;
+}
+
+.productDetails_image img{
+  width: 400px;
+  height: 500px;
+}
+
+.productDetails_imageButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.productDetails_imageButtons button{
+  border: none;
+  padding: 10px 20px;
+  width: 48%;
+}
+
+.productDetails_imageButtons button:nth-child(1){
+  background-color: #ff9f00;
+}
+
+.productDetails_imageButtons button:nth-child(2){
+  background-color: #fb641b;
+}
+
+.productDetails_ratings{
+  display: flex;
+  column-gap: 20px;
+}
+
+.productDetails_ratings_value{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+.productDetails_price{
+  display: flex;
+  flex-direction: column;
+}
+
+.productDetails_price_head{
+  color: green;
+  font-weight: 600;
+}
+
+.productDetails_price_body{
+  display: flex;
+  column-gap: 10px;
+  align-items: baseline;
+  margin-top: -10px;
+}
+
+.productDetails_price_MRP{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.productDetails_price_offer{
+  color: green;
+  font-weight: 500;
+}
+
+.productDetails_coupons_body_line{
+  display: flex;
+  column-gap: 5px;
+  padding: 5px;
+  align-items:flex-start
+}
+
+.productDetails_description,
+.productDetails_delivery,
+.productDetails_seller{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  
+}
+
+.productDetails_description_text{
+  overflow: hidden;
+ display: -webkit-box;
+ -webkit-line-clamp: 2;
+         line-clamp: 2; 
+ -webkit-box-orient: vertical;
+}
+
+.show{
+  overflow: visible;
+  display: -webkit-box;
+ /* -webkit-line-clamp: 2;
+         line-clamp: 2;  */
+ -webkit-box-orient: vertical;
+}
+
+.productDetails_delivery_pincode{
+  display: flex;
+  column-gap: 10px;
+  
+}
+
+.productDetails_delivery_input{
+  display: flex;
+  align-items: baseline;
+  column-gap: 10px;
+}
+
+.productDetails_delivery_input i{
+  font-size: 1rem;
+}
+
+.productDetails_delivery_pincode input,
+.productDetails_delivery_pincode button{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.productDetails_seller_name{
+  display: flex;
+  color: blue;
+  font-weight: 500;
+}
+
+.productDetails_reviews{
+  display: flex;
+  flex-direction: column;
+}
+
+.productDetails_reviews_head{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.productDetails_reviews_body{
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+}
+
+.productDetails_reviews_ratings{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productDetails_reviews_ratings_chart{
+  display: flex;
+  column-gap: 10px;
+}
+
+.productDetails_reviews_ratings_chart_part{
+  width: 200px;
+  background-color: green;
+  height: 10px;
+  border-radius: 50px;
+  align-self: center;
+}
+
+.productDetails_reviews_body > div > div:nth-child(4) > div{
+  background-color: orange;
+}
+
+.productDetails_reviews_body > div > div:nth-child(5) > div{
+  background-color: red;
+}
+
+.productDetails_reviews_ratings_progressbar{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.productDetails_heading,
+.productDetails_price_head,
+.productDetails_coupons_heading{
+  display: flex;
+}

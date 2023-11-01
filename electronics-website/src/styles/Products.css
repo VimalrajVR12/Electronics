@@ -1,0 +1,135 @@
+.products_container{
+  display: flex;
+}
+
+.products_head{
+  /* border: 1px solid black; */
+  padding: 10px;
+  width: 20%;
+}
+
+.filters{
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.filter_head{
+  padding: 10px;
+}
+
+.filter_button{
+  text-decoration: none;
+  padding: 10px;
+}
+
+.card-body{
+  border: none;
+  background-color: whitesmoke;
+}
+
+.products_body{
+  width: 80%;
+}
+
+.products_body_line1{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.products_body_search{
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 50px;
+}
+
+.products_body_search input,
+.products_body_search button{
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.products_body_search svg{
+  height: 1.5rem;
+}
+
+.products_body_sort{
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: whitesmoke;
+  border-radius: 50px;
+}
+
+.products_data{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  gap: 10px;
+}
+
+.products_singleProduct{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  padding: 10px;
+  row-gap: 10px;
+}
+
+.products_singleProduct_div1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.products_singleProduct_div2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products_singleProduct_div2 img{
+  width: 300px;
+  height: 300px;
+}
+
+.products_singleProduct_price{
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.products_singleProduct_MRP{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.products_singleProduct_button{
+  width: 100%;
+}
+
+.products_singleProduct_button button{
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 10px;
+  background-color: #508ffb;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.products_pagination{
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.products_pagination button{
+  border: none;
+  background-color: transparent;
+}
+
+.products_pagination button:nth-child(2){
+  cursor: not-allowed;
+}

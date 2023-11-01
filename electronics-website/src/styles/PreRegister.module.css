@@ -1,0 +1,43 @@
+.container{
+    position: relative;
+    height: 400px;
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.container div{
+    height: 100%;
+}
+.container img{
+    height: 200px;
+}
+.container p{
+    font-size: 32px;
+}
+.sparkling{
+    font-family: monospace;
+}
+.secretContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container button{
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    color: white;
+    background-color: #508ffb;
+    border: 1px solid lightgray;
+    padding: 10px 20px;
+
+}
+.container button:hover{
+    background-color: royalblue;
+}

@@ -1,0 +1,37 @@
+.container{
+    padding: 30px;
+    margin: 5px;
+    margin-top: 50px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+}
+.container svg{
+    height: 4em;
+}
+.container svg:hover{
+    transform: translate(1.02);
+}
+.fbSVG svg{
+    fill: rgb(59,89,152);
+}
+.head{
+margin-bottom: 0;
+}
+.emailContainer{
+    color:#508ffb;
+    font-weight: 800;
+    font-family: 'Inter',sans-serif;
+}
+.emailContainer:hover{
+    color: royalblue;
+}
+
+.instaSVG svg{
+    fill: rgb(214,41,118);
+}
+.xSVG svg{
+    fill: black;
+}
+.ytSVG svg{
+    fill:red;
+}

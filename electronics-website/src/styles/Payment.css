@@ -1,0 +1,93 @@
+.addressContainer,
+.paymentContainer{
+    /* border: 5px solid red; */
+    padding: 10px;
+}
+
+.delivery_heading,
+.payment_heading{
+    display: flex;
+    background-color: #508ffb;
+    padding: 1px;
+    color: white;
+}
+
+.delivery_heading h3,
+.payment_heading h3{
+    padding-left: 20px;
+    color: white;
+}
+
+.delivery_address,
+.payment_cashOnDelivery,
+.payment_onlinePayment{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* .delivery_address input[type= "checkbox"]{
+    
+} */
+
+.delivery_address button{
+    max-width: 200px;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    
+}
+
+.delivery_address h5{
+    margin-top: -10px;
+}
+
+.addAddress{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 50px;
+    color: blue;
+    background-color: white;
+    padding-left: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.addAddress_field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.address_form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.address_form input,
+.address_form button{
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.address_form .button{
+    display: flex;
+}
+
+.address_form input{
+    border: none;
+    outline: none;
+}
+
+.address_form input:focus{
+    background-color: whitesmoke;
+}
